@@ -1,4 +1,4 @@
-import { cpSync, existsSync, mkdirSync, readdirSync } from "node:fs";
+import { cpSync, existsSync, mkdirSync, readdirSync, writeFileSync } from "node:fs";
 import { resolve } from "node:path";
 import { defineConfig } from "vite";
 
@@ -43,6 +43,11 @@ function copyStaticResources() {
           cpSync(source, resolve(outDir, file));
         }
       }
+
+      writeFileSync(
+        resolve(outDir, "index.js"),
+        "export default { fetch(request, env) { return env.ASSETS.fetch(request); } };\n"
+      );
     }
   };
 }
