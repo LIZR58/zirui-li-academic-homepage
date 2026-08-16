@@ -53,6 +53,7 @@ function copyStaticResources() {
 }
 
 export default defineConfig({
+  base: "./",
   appType: "mpa",
   publicDir: false,
   build: {
