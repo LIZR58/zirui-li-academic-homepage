@@ -1,6 +1,27 @@
-import { cpSync, existsSync } from "node:fs";
+import { cpSync, existsSync, mkdirSync, readdirSync } from "node:fs";
 import { resolve } from "node:path";
 import { defineConfig } from "vite";
+
+const excludedAssetDirs = new Set(["certificates", "papers"]);
+
+function copyDirectory(source, destination, depth = 0) {
+  mkdirSync(destination, { recursive: true });
+
+  for (const entry of readdirSync(source, { withFileTypes: true })) {
+    if (depth === 0 && excludedAssetDirs.has(entry.name)) {
+      continue;
+    }
+
+    const sourcePath = resolve(source, entry.name);
+    const destinationPath = resolve(destination, entry.name);
+
+    if (entry.isDirectory()) {
+      copyDirectory(sourcePath, destinationPath, depth + 1);
+    } else if (entry.isFile()) {
+      cpSync(sourcePath, destinationPath);
+    }
+  }
+}
 
 function copyStaticResources() {
   return {
@@ -12,7 +33,7 @@ function copyStaticResources() {
       for (const dir of ["assets", "js"]) {
         const source = resolve(root, dir);
         if (existsSync(source)) {
-          cpSync(source, resolve(outDir, dir), { recursive: true });
+          copyDirectory(source, resolve(outDir, dir));
         }
       }
 

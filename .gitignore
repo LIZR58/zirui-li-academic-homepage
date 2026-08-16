@@ -4,5 +4,7 @@
 .codex_publish_archive.tar.gz
 .codex_publish_files.txt
 qa/
+assets/papers/
+assets/certificates/
 node_modules/
 dist/
