@@ -1,2 +1,7 @@
 .codex_publish_deps/
+.codex_publish_tools/
 .codex_publish_archive.tar
+.codex_publish_files.txt
+qa/
+node_modules/
+dist/
