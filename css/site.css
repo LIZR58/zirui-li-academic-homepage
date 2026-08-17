@@ -612,7 +612,13 @@ h4 {
   display: grid;
   grid-template-columns: 34px minmax(0, 1fr);
   gap: 10px;
-  align-items: start;
+  align-items: center;
+  min-height: 44px;
+}
+
+.pillar-heading h3 {
+  font-size: 1.04rem;
+  line-height: 1.18;
 }
 
 .pillar-heading svg {
@@ -676,6 +682,13 @@ h4 {
 .news-card p,
 .project-card p {
   margin: 10px 0 0;
+}
+
+.research-pillar .pillar-copy p {
+  margin-top: 12px;
+  font-size: 0.92rem;
+  line-height: 1.52;
+  text-wrap: pretty;
 }
 
 .project-content {
