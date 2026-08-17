@@ -391,9 +391,9 @@ window.siteContent = {
     },
     {
       date: "Jun 2024",
-      title: "Presented ergonomic assessment research at ISARC 2024",
+      title: "Presented research at ISARC 2024 in Lille, France",
       text: "Presented joint-level scoring models for whole-body ergonomic assessment of construction workers at the 41st International Symposium on Automation and Robotics in Construction in Lille, France.",
-      image: "assets/images/events/isarc-2024-01.jpg",
+      image: "assets/images/events/isarc-2024-lille.jpg",
       links: [
         { label: "ISARC 2024", url: "https://www.iaarc.org/isarc-2024" },
         { label: "Poster", url: "assets/slides/LZR_ISARC_poster.pptx" }
