@@ -42,7 +42,7 @@ window.siteContent = {
         {
           level: "National",
           period: "Dec 2025 - Present",
-          title: "Young Elite Scientists Sponsorship Program by CAST (Ph.D. Special Program)",
+          title: "Young Elite Scientists Sponsorship Program by China Association of Science and Technology (Ph.D. Special Program)",
           meta: "China Association for Science and Technology (CAST) | CNY 40,000",
           logo: "assets/images/logos/cast-logo.png",
           logoAlt: "China Association for Science and Technology logo"
@@ -336,8 +336,8 @@ window.siteContent = {
     },
     {
       date: "Nov 2025",
-      title: "Attended the annual conference of the Engineering Management branch",
-      text: "Participated in the annual academic conference of the engineering management community, exchanging ideas on construction management, digital transformation, and civil engineering governance.",
+      title: "Attended the CCES Engineering Management Branch annual conference",
+      text: "Participated in the annual academic conference of the Engineering Management Branch of the China Civil Engineering Society (CCES), exchanging ideas on construction management, digital transformation, and civil engineering governance.",
       image: "assets/images/events/engineering-management-annual-2025-03.jpg",
       links: [
         { label: "Conference note", url: "https://mp.weixin.qq.com/s/5QMtYAhL2EixhQBz736agw" },
@@ -371,8 +371,8 @@ window.siteContent = {
     },
     {
       date: "Jan 2025",
-      title: "Hosted academic exchange with Prof. Markus Koenig",
-      text: "Participated in scholarly exchange with Prof. Markus Koenig on construction informatics, digital engineering, and intelligent built environments.",
+      title: "Hosted academic exchange with Prof. Markus König from RUB",
+      text: "Participated in scholarly exchange with Prof. Markus König from Ruhr University Bochum (RUB) on construction informatics, digital engineering, and intelligent built environments.",
       image: "assets/images/events/markus-visit-2025-01.jpg",
       links: [{ label: "Profile", url: "https://www.inf.bi.ruhr-uni-bochum.de/iib/lehrstuhl/mitarbeiter/markus_koenig.html" }]
     },
@@ -420,7 +420,7 @@ window.siteContent = {
     {
       group: "Education Background",
       date: "Sep 2022 - Present",
-      title: "Ph.D. Candidate, Civil Engineering and Construction Management",
+      title: "Ph.D. Candidate in Civil Engineering and Management",
       organization: "Southeast University",
       logo: "assets/images/logos/seu-emblem.png",
       logoAlt: "Southeast University logo",
