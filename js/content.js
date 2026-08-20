@@ -7,7 +7,7 @@ window.siteContent = {
       image: "assets/images/research/infrastructure-resilience.png",
       text: "Modeling socio-technical system dynamics for resilient, service-oriented infrastructure management.",
       detail: "Integrate socio-technical modeling with service-oriented resilience assessment to connect physical disruptions and recovery processes with system functionality and user-facing consequences. Develop data-driven and deep reinforcement learning approaches to identify critical interventions, optimize post-disaster recovery, and support adaptive resilience decision-making.",
-      methods: ["Resilience", "Post-disaster recovery", "Socio-technical system", "DRL"],
+      methods: ["Resilience", "Post-Disaster Recovery", "Socio-Technical System", "DRL"],
       links: [
         {
           title: "Socio-technical infrastructure resilience modeling with FRAM",
@@ -34,7 +34,7 @@ window.siteContent = {
       image: "assets/images/research/ai-engineering-management.png",
       text: "Developing AI tools that turn heterogeneous engineering data into actionable knowledge and decisions.",
       detail: "Integrate multimodal data, domain knowledge, and learning-based models to support engineering analysis, prediction, and sequential decision-making. Develop multimodal learning, transfer learning, reinforcement learning, and emerging knowledge- and agent-based approaches to improve robustness, adaptability, and decision support in complex engineering systems.",
-      methods: ["multimodal fusion", "transfer learning", "feature engineering", "ML/RL"],
+      methods: ["Multimodal Fusion", "Transfer Learning", "Feature Engineering", "ML/RL"],
       output: "Emerging directions: Knowledge graphs · LLM agents",
       links: [
         {
@@ -57,7 +57,7 @@ window.siteContent = {
       image: "assets/images/research/human-factor-engineering.png",
       text: "Understanding human states and enabling safer, adaptive, and human-centered engineering systems.",
       detail: "Investigate how cognitive, physiological, and behavioral states influence safety, health, performance, and human-technology interaction in complex engineering environments. Integrate EEG, VR, computer vision, wearable sensing, ergonomics, and multimodal learning to recognize human states and support proactive intervention and adaptive human-robot collaboration.",
-      methods: ["Human factors", "EEG", "ergonomics", "VR", "human-robot collaboration"],
+      methods: ["Human Factors", "EEG", "Ergonomics", "VR", "Human-Robot Collaboration"],
       links: [
         {
           title: "EEG-VR experiment for cognitive state recognition",

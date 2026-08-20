@@ -42,7 +42,7 @@ const renderResearchPapers = (link) => {
 
 const researchCardHeadline = (theme) => ({
   "Infrastructure Resilience": "Modeling resilience and recovery in socio-technical infrastructure",
-  "AI for Engineering Management": "Learning from scarce and multimodal engineering data",
+  "AI for Engineering Management": "Learning from multimodal and scarce engineering data",
   "Human Factor Engineering": "Recognizing human states for safer engineering systems"
 }[theme.title] || theme.text);
 
