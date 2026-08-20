@@ -30,7 +30,7 @@ function copyStaticResources() {
       const root = __dirname;
       const outDir = resolve(root, "dist");
 
-      for (const dir of ["assets", "js"]) {
+      for (const dir of ["assets", "js", "css", "research"]) {
         const source = resolve(root, dir);
         if (existsSync(source)) {
           copyDirectory(source, resolve(outDir, dir));

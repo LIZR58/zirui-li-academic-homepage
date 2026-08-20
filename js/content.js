@@ -5,30 +5,188 @@ window.siteContent = {
       label: "Pillar 01",
       icon: "network",
       image: "assets/images/research/infrastructure-resilience.png",
-      text: "Adopting a socio-technical perspective to link infrastructure resilience with their socioeconomic consequences and inform post-disaster restoration strategies.",
-      points: ["Complex networks", "Urban mobility", "Socio-technical systems", "Reinforcement learning"],
-      methods: ["Complex networks", "Urban mobility", "Socio-technical systems", "Reinforcement learning"],
-      output: ""
+      text: "Modeling socio-technical system dynamics for resilient, service-oriented infrastructure management.",
+      detail: "Integrate socio-technical modeling with service-oriented resilience assessment to connect physical disruptions and recovery processes with system functionality and user-facing consequences. Develop data-driven and deep reinforcement learning approaches to identify critical interventions, optimize post-disaster recovery, and support adaptive resilience decision-making.",
+      methods: ["Resilience", "Post-disaster recovery", "Socio-technical system", "DRL"],
+      links: [
+        {
+          title: "Socio-technical infrastructure resilience modeling with FRAM",
+          url: "research/fram.html",
+          summary: "FRAM-based modeling and resilience optimization for socio-technical infrastructure systems.",
+          papers: [
+            { label: "RESS 2026", url: "https://doi.org/10.1016/j.ress.2026.112834" },
+            { label: "i3CE 2026", url: "https://doi.org/10.1061/9780784486176.017" }
+          ]
+        },
+        {
+          title: "Service-oriented post-flood recovery scheduling for urban metro systems",
+          url: "research/metro-recovery.html",
+          summary: "Scheduling recovery resources around service restoration after flood disruptions.",
+          paperNote: "No linked paper yet"
+        },
+        { title: "Socioeconomic and service impacts of infrastructure disruptions", note: "Ongoing" }
+      ]
     },
     {
       title: "AI for Engineering Management",
       label: "Pillar 02",
       icon: "brain-circuit",
       image: "assets/images/research/ai-engineering-management.png",
-      text: "Developing AI-enabled tools that integrate heterogeneous engineering data, knowledge representation, and digital twins to support explainable analysis, prediction, and intelligent decision-making in engineering management.",
-      points: ["Knowledge graphs", "Deep learning", "Transfer learning", "Explainable AI"],
-      methods: ["Knowledge graphs", "Deep learning", "Transfer learning", "Explainable AI"],
-      output: ""
+      text: "Developing AI tools that turn heterogeneous engineering data into actionable knowledge and decisions.",
+      detail: "Integrate multimodal data, domain knowledge, and learning-based models to support engineering analysis, prediction, and sequential decision-making. Develop multimodal learning, transfer learning, reinforcement learning, and emerging knowledge- and agent-based approaches to improve robustness, adaptability, and decision support in complex engineering systems.",
+      methods: ["multimodal fusion", "transfer learning", "feature engineering", "ML/RL"],
+      output: "Emerging directions: Knowledge graphs · LLM agents",
+      links: [
+        {
+          title: "Transfer learning for data-scarce engineering state recognition",
+          url: "research/transfer-learning.html",
+          summary: "Transfer learning for EEG-based cognitive and vigilance-state recognition with scarce task data.",
+          papers: [
+            { label: "AEI 2025", url: "https://doi.org/10.1016/j.aei.2024.103052" },
+            { label: "JBDE 2025", url: "https://doi.org/10.70401/jbde.2025.0005" }
+          ]
+        },
+        { title: "Multimodal learning for robust engineering sensing and analytics", url: "research/multimodal-learning.html" },
+        { title: "Deep reinforcement learning for adaptive engineering decision-making", url: "research/drl-decision.html" }
+      ]
     },
     {
       title: "Human Factor Engineering",
       label: "Pillar 03",
       icon: "activity",
       image: "assets/images/research/human-factor-engineering.png",
-      text: "Investigating how cognitive, physiological, and behavioral states influence engineering performance and human-technology interaction, using multimodal sensing and immersive experiments to support safer and more human-centered systems.",
-      points: ["EEG", "VR/XR", "Multimodal sensing", "Human-robot interaction"],
-      methods: ["EEG", "VR/XR", "Multimodal sensing", "Human-robot interaction"],
-      output: ""
+      text: "Understanding human states and enabling safer, adaptive, and human-centered engineering systems.",
+      detail: "Investigate how cognitive, physiological, and behavioral states influence safety, health, performance, and human-technology interaction in complex engineering environments. Integrate EEG, VR, computer vision, wearable sensing, ergonomics, and multimodal learning to recognize human states and support proactive intervention and adaptive human-robot collaboration.",
+      methods: ["Human factors", "EEG", "ergonomics", "VR", "human-robot collaboration"],
+      links: [
+        {
+          title: "EEG-VR experiment for cognitive state recognition",
+          url: "research/eeg-vr.html",
+          summary: "VR task environments and EEG sensing for recognizing vigilance and adverse mental states.",
+          papers: [
+            { label: "AEI 2025", url: "https://doi.org/10.1016/j.aei.2024.103052" },
+            { label: "DIBE 2024", url: "https://doi.org/10.1016/j.dibe.2024.100513" }
+          ]
+        },
+        { title: "Data-driven and multimodal ergonomic assessment", url: "research/ergonomic-assessment.html" },
+        { title: "Human-centric human-robot collaboration in construction", url: "research/human-robot-collaboration.html" }
+      ]
+    }
+  ],
+  researchDetails: [
+    {
+      id: "fram",
+      pillar: "Infrastructure Resilience",
+      title: "Socio-technical infrastructure resilience modeling with FRAM",
+      image: "assets/images/research-details/fram.webp",
+      text: "Model infrastructure resilience as a dynamic socio-technical system spanning pre-event prevention, during-event response, and post-event recovery. Use FRAM to represent functional couplings and quantify how intrinsic variability propagates within and across resilience stages, revealing critical interaction pathways that shape system degradation and recovery. Establish a structured representation of system dynamics for resilience assessment and subsequent intervention optimization.",
+      highlights: [
+        "Represents infrastructure resilience across prevention, response, and recovery stages.",
+        "Uses FRAM to capture functional couplings and variability propagation.",
+        "Builds a structured basis for resilience assessment and intervention optimization."
+      ],
+      publicationTitles: [
+        "Deep reinforcement learning-driven resilience optimization for infrastructure systems: A socio-technical perspective integrating functional resonance analysis method",
+        "Optimizing resilience for urban metro system via deep reinforcement learning: A socio-technical perspective"
+      ]
+    },
+    {
+      id: "metro-recovery",
+      pillar: "Infrastructure Resilience",
+      title: "Service-oriented post-flood recovery scheduling for urban metro systems",
+      status: "Under review",
+      image: "assets/images/research-details/metro-recovery.webp",
+      text: "Model post-flood metro recovery as a sequential resource-allocation problem linking damaged stations and tracks to network-level service restoration. Develop a multi-task reinforcement learning framework to learn recovery priorities across multiple service objectives, including network efficiency, passenger flow, and operational revenue. Enable rapid and adaptive scheduling of limited emergency teams while revealing how restoration priorities shift across disruption scenarios and service objectives.",
+      highlights: [
+        "Frames post-flood metro recovery as a sequential resource-allocation problem.",
+        "Learns restoration priorities across efficiency, passenger flow, and revenue objectives.",
+        "Supports adaptive scheduling of limited emergency recovery teams."
+      ],
+      publicationTitles: []
+    },
+    {
+      id: "transfer-learning",
+      pillar: "AI for Engineering Management",
+      title: "Transfer learning for data-scarce engineering state recognition",
+      image: "assets/images/research-details/transfer-learning.webp",
+      text: "Leverage pre-trained deep learning models to transfer knowledge from large-scale source datasets to domain-specific engineering recognition tasks with limited labeled data. Adapt learned CNN-LSTM representations through task-specific transfer layers and fine-tuning to enable robust cognitive state recognition across real-world and VR environments. Benchmark transfer-based models against conventional deep learning and baseline approaches to assess recognition accuracy and temporal stability under data-scarce conditions.",
+      highlights: [
+        "Transfers representations from source datasets to engineering recognition tasks with limited labels.",
+        "Adapts CNN-LSTM models with task-specific transfer layers and fine-tuning.",
+        "Benchmarks accuracy and temporal stability under data-scarce conditions."
+      ],
+      publicationTitles: [
+        "Vigilance recognition for construction workers using EEG and transfer learning",
+        "Pre-trained deep learning models for EEG-based cognitive state recognition for construction workers through transfer learning"
+      ]
+    },
+    {
+      id: "multimodal-learning",
+      pillar: "AI for Engineering Management",
+      title: "Multimodal learning for robust engineering sensing and analytics",
+      image: "assets/images/research-details/multimodal-learning.webp",
+      text: "Integrate visual pose and joint-point data, wearable motion signals, and EEG measurements to capture complementary physical and physiological information from engineering activities. Transform heterogeneous sensor streams into unified feature representations through feature engineering, normalization, dimensionality reduction, and feature-level fusion. Leverage deep learning models to learn cross-modal and temporal patterns for robust recognition and classification in complex engineering environments.",
+      highlights: [
+        "Combines visual pose, wearable motion signals, and EEG measurements.",
+        "Turns heterogeneous sensing streams into unified feature representations.",
+        "Learns cross-modal and temporal patterns for robust recognition in complex settings."
+      ],
+      publicationTitle: "A feature-level fusion-based multimodal analysis of recognition and classification of awkward working postures in construction"
+    },
+    {
+      id: "drl-decision",
+      pillar: "AI for Engineering Management",
+      title: "Deep reinforcement learning for adaptive engineering decision-making",
+      image: "assets/images/research-details/drl-decision.webp",
+      text: "Translate complex engineering system dynamics into a reinforcement learning environment through structured state, action, and reward representations. Couple system-state evolution and cascading functional interactions with DRL agents to learn intervention policies that reduce functional variability and resilience loss. Enable adaptive decision-making by continuously evaluating system responses and identifying high-impact control actions under changing conditions.",
+      highlights: [
+        "Converts engineering system dynamics into state, action, and reward representations.",
+        "Couples cascading functional interactions with DRL-based intervention learning.",
+        "Identifies high-impact control actions under changing system conditions."
+      ],
+      publicationTitle: "Deep reinforcement learning-driven resilience optimization for infrastructure systems: A socio-technical perspective integrating functional resonance analysis method"
+    },
+    {
+      id: "eeg-vr",
+      pillar: "Human Factor Engineering",
+      title: "EEG-VR experiment for cognitive state recognition",
+      image: "assets/images/research-details/eeg-vr.webp",
+      text: "Recreate representative construction tasks in immersive VR environments while preserving key spatial layouts, work sequences, and task demands from real-world settings. Integrate head-mounted VR with wearable EEG sensing to capture cognitive and physiological responses under controlled and repeatable conditions. Establish an experimental platform for investigating human cognitive states and developing data-driven recognition models for safer and more human-centered engineering systems.",
+      highlights: [
+        "Recreates construction tasks in controlled and repeatable VR environments.",
+        "Integrates immersive VR with wearable EEG sensing.",
+        "Supports data-driven recognition of cognitive states for safer engineering systems."
+      ],
+      publicationTitles: [
+        "Vigilance recognition for construction workers using EEG and transfer learning",
+        "EEG-based detection of adverse mental state under multi-dimensional unsafe psychology for construction workers at height"
+      ]
+    },
+    {
+      id: "ergonomic-assessment",
+      pillar: "Human Factor Engineering",
+      title: "Data-driven and multimodal ergonomic assessment",
+      image: "assets/images/research-details/ergonomic-assessment.webp",
+      text: "Transform human pose and motion data into quantitative representations of biomechanical exposure for ergonomic assessment. Develop data-driven joint-level scoring models from large-scale 3D motion data to capture continuous variations in posture beyond coarse rule-based categories. Integrate computer-vision-based 2D pose detection with 3D pose estimation to enable scalable ergonomic assessment in real construction environments.",
+      highlights: [
+        "Transforms pose and motion data into biomechanical exposure representations.",
+        "Develops joint-level scoring models from large-scale 3D motion data.",
+        "Connects 2D pose detection and 3D pose estimation for scalable field assessment."
+      ],
+      publicationTitle: "Data-driven ergonomic assessment of construction workers"
+    },
+    {
+      id: "human-robot-collaboration",
+      pillar: "Human Factor Engineering",
+      title: "Human-centric human-robot collaboration in construction",
+      image: "assets/images/research-details/human-robot-collaboration.webp",
+      text: "Develop human-robot collaboration from a human-centric perspective by integrating human sensing, environmental perception, and task-context understanding. Structure heterogeneous information around human-robot teams through hierarchical task representations and multimodal inference, enabling robots to better understand human states, work contexts, and evolving task demands. Advance toward adaptive human-robot collaboration in which robotic actions respond dynamically to both human and environmental conditions.",
+      highlights: [
+        "Frames human-robot collaboration from a human-centered systems perspective.",
+        "Combines human sensing, environmental perception, and task-context understanding.",
+        "Moves toward adaptive robotic actions responsive to human and environmental conditions."
+      ],
+      publicationTitle: "Human-centric human-robot collaboration in on-site construction (2014-2024): Advances, barriers, and future directions"
     }
   ],
   projects: [

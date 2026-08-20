@@ -16,23 +16,67 @@ const renderLinks = (links = []) => {
 
 const formatDate = (date) => escapeHtml(date).replace(/; /g, ";<br>");
 
+const renderResearchPapers = (link) => {
+  if (link.papers?.length) {
+    return `
+      <div class="research-paper-row" aria-label="Related publications">
+        ${link.papers.map((paper) => `
+          <a class="research-paper-chip" href="${escapeHtml(paper.url)}"${linkAttrs(paper.url)}>
+            <span>${escapeHtml(paper.label)}</span>
+          </a>
+        `).join("")}
+      </div>
+    `;
+  }
+
+  if (link.paperNote) {
+    return `
+      <div class="research-paper-row" aria-label="Publication status">
+        <span class="research-paper-chip research-paper-chip-muted">${escapeHtml(link.paperNote)}</span>
+      </div>
+    `;
+  }
+
+  return "";
+};
+
+const researchCardHeadline = (theme) => ({
+  "Infrastructure Resilience": "Modeling resilience and recovery in socio-technical infrastructure",
+  "AI for Engineering Management": "Learning from scarce and multimodal engineering data",
+  "Human Factor Engineering": "Recognizing human states for safer engineering systems"
+}[theme.title] || theme.text);
+
 function renderResearchThemes() {
   const root = document.querySelector("#research-themes");
   root.innerHTML = siteContent.researchThemes
-    .map((theme) => `
+    .map((theme, themeIndex) => `
       <article class="theme-card research-pillar">
+        <div class="research-card-title">
+          <p class="card-kicker">${escapeHtml(theme.title)}</p>
+        </div>
         <div class="pillar-media">
           <img src="${escapeHtml(theme.image)}" alt="${escapeHtml(theme.title)}">
-          <span>${escapeHtml(theme.label || "Research")}</span>
+          <span>${String(themeIndex + 1).padStart(2, "0")}</span>
         </div>
         <div class="pillar-copy">
-          <div class="pillar-heading">
-            <i data-lucide="${escapeHtml(theme.icon || "sparkles")}"></i>
-            <h3>${escapeHtml(theme.title)}</h3>
-          </div>
-          <p>${escapeHtml(theme.text)}</p>
-          <div class="method-row">${(theme.methods || theme.points).map((point) => `<span>${escapeHtml(point)}</span>`).join("")}</div>
-          <small>${escapeHtml(theme.output || "")}</small>
+          <h3>${escapeHtml(researchCardHeadline(theme))}</h3>
+          ${theme.links ? `
+            <ul class="research-focus-list">
+              ${theme.links.map((link) => `
+                <li class="research-focus-item${link.url ? "" : " research-focus-item-muted"}">
+                  <div>
+                    ${link.url ? `
+                      <a class="research-focus-title" href="${escapeHtml(link.url)}">${escapeHtml(link.title)}</a>
+                    ` : `
+                      <span class="research-focus-title">${escapeHtml(link.title)}</span>
+                    `}
+                    ${link.note ? `<em class="research-focus-note">(${escapeHtml(link.note).toLowerCase()})</em>` : ""}
+                  </div>
+                </li>
+              `).join("")}
+            </ul>
+          ` : ""}
+          <div class="method-row">${(theme.methods || theme.points || []).map((point) => `<span>${escapeHtml(point)}</span>`).join("")}</div>
         </div>
       </article>
     `)
@@ -42,7 +86,9 @@ function renderResearchThemes() {
 function renderProjects() {
   const root = document.querySelector("#project-grid");
   root.innerHTML = siteContent.projects
-    .map((project) => `
+    .map((project) => {
+      const isLeadProjectGroup = /Research Projects - Lead/i.test(project.category || "");
+      return `
       <section class="project-section">
         <div class="project-section-head">
           <span class="project-icon"><i data-lucide="${escapeHtml(project.icon || "folder-kanban")}"></i></span>
@@ -52,28 +98,41 @@ function renderProjects() {
         </div>
         <div class="project-content">
           <div class="project-items">
-            ${project.items.map((item) => `
-              <div class="project-item${item.logo ? " project-item-with-logo" : ""}">
-                <div class="project-item-head">
-                  <div class="project-tag-row">
-                    <span class="project-period">${escapeHtml(item.period)}</span>
-                    ${item.level ? `<span class="project-level">${escapeHtml(item.level)}</span>` : ""}
-                  </div>
-                </div>
-                <div class="project-item-body">
-                  <div class="project-title-row">
-                    <strong>${escapeHtml(item.title)}</strong>
-                  </div>
-                  <small>${escapeHtml(item.meta)}</small>
-                </div>
-                ${item.logo ? `<img class="project-sponsor-logo" src="${escapeHtml(item.logo)}" alt="${escapeHtml(item.logoAlt || item.title)}">` : ""}
+            ${project.items.map((item) => {
+        const hasStudentLeader = /\bstudent leader\b/i.test(item.meta || "");
+        const meta = hasStudentLeader
+          ? item.meta
+              .replace(/\s*\|\s*Student leader\s*\|\s*/i, " | ")
+              .replace(/\s*\|\s*Student leader\s*$/i, "")
+              .replace(/^Student leader\s*\|\s*/i, "")
+          : item.meta;
+
+        return `
+          <div class="project-item${item.logo ? " project-item-with-logo" : ""}">
+            <div class="project-item-head">
+              <div class="project-tag-row">
+                <span class="project-period">${escapeHtml(item.period)}</span>
+                ${item.level ? `<span class="project-level">${escapeHtml(item.level)}</span>` : ""}
+                ${isLeadProjectGroup ? `<span class="project-role-tag">Leader</span>` : ""}
+                ${hasStudentLeader ? `<span class="project-role-tag">Student leader</span>` : ""}
               </div>
-            `).join("")}
+            </div>
+            <div class="project-item-body">
+              <div class="project-title-row">
+                <strong>${escapeHtml(item.title)}</strong>
+              </div>
+              <small>${escapeHtml(meta)}</small>
+            </div>
+            ${item.logo ? `<img class="project-sponsor-logo" src="${escapeHtml(item.logo)}" alt="${escapeHtml(item.logoAlt || item.title)}">` : ""}
+          </div>
+        `;
+      }).join("")}
           </div>
           ${project.image ? `<img class="project-group-image" src="${escapeHtml(project.image)}" alt="${escapeHtml(project.imageAlt || project.category)}">` : ""}
         </div>
       </section>
-    `)
+    `;
+    })
     .join("");
 }
 
